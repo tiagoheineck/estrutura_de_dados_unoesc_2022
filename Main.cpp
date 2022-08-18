@@ -22,7 +22,7 @@ int main()
 	std::string opcoes[5] = { "1 - Soma", "2 - Subtração", "3 - Multiplicacao", "4 - Divisao", "5 - Conversão de Graus"};
 
 	separador();
-	for (int i = 0; i < 4; i++) {
+	for (int i = 0; i < 5; i++) {
 		std::cout << opcoes[i] << "\n";		
 	}
 	scanf_s("%d", &opcao);

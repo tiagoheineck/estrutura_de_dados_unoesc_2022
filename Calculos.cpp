@@ -69,18 +69,15 @@ void divisao() {
 
 void conversao_graus() {
     int a = 0;
-    int b = 0;
     int conversao = 0;
 
-    printf("Digite A\n");
-    scanf_s("%f", &a);
+    printf("Digite a temperatura\n");
+    scanf_s("%d", &a);
 
-    printf("Digite B\n");
-    scanf_s("%f", &b);
 
-    conversao = a / b;
+    conversao = a * 1.8 + 32;
 
-    printf("O Valor da subtracao é: %f\n", conversao);
+    printf("O Valor da subtracao é: %d \n", conversao);
 }
 
 
