@@ -19,7 +19,7 @@ int main()
 	std::cout << "Qual programa você quer executar? \n";
 	separador();
 
-	std::string opcoes[4] = { "1 - Soma", "2 - Conversor de Graus", "3 - Fatorial", "4 - Potencia"};
+	std::string opcoes[4] = { "1 - Soma", "2 - Subtração", "3 - Multiplicacao", "4 - Divisao"};
 
 	separador();
 	for (int i = 0; i < 4; i++) {
@@ -33,6 +33,28 @@ int main()
 			std::cout << "Estou iniciando soma \n";
 			soma();
 			break;
+		case 2:
+			separador();
+			std::cout << "Estou iniciando a subtração \n";
+			subtracao();
+			break;
+		case 3:
+			separador();
+			std::cout << "Estou iniciando a subtração \n";
+			multiplicacao();
+			break;
+		case 4:
+			separador();
+			std::cout << "Estou iniciando a subtração \n";
+			divisao();
+			break;
+		default:
+			std::cout << "Opção invalida \n";
+
+
+
+
+
 
 	}
 }
