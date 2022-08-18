@@ -66,3 +66,21 @@ void divisao() {
 
     printf("O Valor da subtracao é: %.2f\n", divisao);
 }
+
+void conversao_graus() {
+    int a = 0;
+    int b = 0;
+    int conversao = 0;
+
+    printf("Digite A\n");
+    scanf_s("%f", &a);
+
+    printf("Digite B\n");
+    scanf_s("%f", &b);
+
+    conversao = a / b;
+
+    printf("O Valor da subtracao é: %f\n", conversao);
+}
+
+
