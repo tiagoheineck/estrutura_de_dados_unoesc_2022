@@ -20,7 +20,7 @@ int main()
 	std::cout << "Qual programa você quer executar? \n";
 	separador();
 
-	std::string opcoes[6] = { "1 - Soma", "2 - Subtração", "3 - Multiplicacao", "4 - Divisao", "5 - Conversão de Graus", "6 - pilha"};
+	std::string opcoes[6] = { "1 - Soma", "2 - Subtração", "3 - Multiplicacao", "4 - Divisao", "5 - Conversão de Graus", "6 - FILA"};
 
 	separador();
 	for (int i = 0; i < 6; i++) {
