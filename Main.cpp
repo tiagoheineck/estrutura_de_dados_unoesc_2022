@@ -3,6 +3,7 @@
 #include <string>
 #include <stdio.h>
 #include "Calculos.h";
+#include "Estruturas.h";
 
 void separador()
 {
@@ -19,10 +20,10 @@ int main()
 	std::cout << "Qual programa você quer executar? \n";
 	separador();
 
-	std::string opcoes[5] = { "1 - Soma", "2 - Subtração", "3 - Multiplicacao", "4 - Divisao", "5 - Conversão de Graus"};
+	std::string opcoes[6] = { "1 - Soma", "2 - Subtração", "3 - Multiplicacao", "4 - Divisao", "5 - Conversão de Graus", "6 - pilha"};
 
 	separador();
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i < 6; i++) {
 		std::cout << opcoes[i] << "\n";		
 	}
 	scanf_s("%d", &opcao);
@@ -52,6 +53,11 @@ int main()
 			separador();
 			std::cout << "Estou iniciando a Conversão de Graus \n";
 			conversao_graus();
+			break;
+		case 6:
+			separador();
+			std::cout << "Estou iniciando a FILAAA \n";
+			fila();
 			break;
 		default:
 			std::cout << "Opção invalida \n";
