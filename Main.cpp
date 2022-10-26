@@ -5,6 +5,7 @@
 #include "Calculos.h";
 #include "Estruturas.h";
 #include "Pessoa.h";
+#include "Arvore.h";
 
 void separador()
 {
@@ -41,10 +42,10 @@ int main()
 	std::cout << "Qual programa você quer executar? \n";
 	separador();
 
-	std::string opcoes[6] = { "1 - Soma", "2 - Subtração", "3 - Multiplicacao", "4 - Divisao", "5 - Conversão de Graus", "6 - FILA"};
+	std::string opcoes[7] = { "1 - Soma", "2 - Subtração", "3 - Multiplicacao", "4 - Divisao", "5 - Conversão de Graus", "6 - FILA", "7 - Arvore"};
 
 	separador();
-	for (int i = 0; i < 6; i++) {
+	for (int i = 0; i < 7; i++) {
 		std::cout << opcoes[i] << "\n";		
 	}
 	scanf_s("%d", &opcao);
@@ -82,13 +83,13 @@ int main()
 			std::cout << "Estou iniciando a FILAAA \n";
 			fila();
 			break;
+		case 7:
+			separador();
+			std::cout << "Bora pra árvore \n";
+			arvore();
+			break;
 		default:
 			std::cout << "Opção invalida \n";
-
-
-
-
-
 
 	}
 }
