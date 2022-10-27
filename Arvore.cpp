@@ -57,19 +57,32 @@ void pos_ordem(struct noh* raiz)
 
 void arvore() {
     struct noh* raiz_de_todos_os_males = NULL;
-    raiz_de_todos_os_males = inserir(raiz_de_todos_os_males, 50);
-    inserir(raiz_de_todos_os_males, 30);
-    inserir(raiz_de_todos_os_males, 20);
-    inserir(raiz_de_todos_os_males, 40);
-    inserir(raiz_de_todos_os_males, 70);
-    inserir(raiz_de_todos_os_males, 60);
-    inserir(raiz_de_todos_os_males, 80);
+    int qualquer_coisa_dai;
+    int continuar = 1;    
+    while (continuar == 1) {
+        printf("Digite o valor\n");
+        scanf_s("%d", &qualquer_coisa_dai);
+        std::cout << qualquer_coisa_dai << "\n";
+        if (raiz_de_todos_os_males == NULL) {
+            raiz_de_todos_os_males = inserir(raiz_de_todos_os_males, qualquer_coisa_dai);
+        }
+        else {
+            inserir(raiz_de_todos_os_males, qualquer_coisa_dai);
+        }       
+        printf("Vai continuar Bill?\n");
+        scanf_s("%d", &continuar);        
+    }    
+   // inserir(raiz_de_todos_os_males, 20);
+   // inserir(raiz_de_todos_os_males, 40);
+   // inserir(raiz_de_todos_os_males, 70);
+   // inserir(raiz_de_todos_os_males, 60);
+  // inserir(raiz_de_todos_os_males, 80);
     
     std::cout << "----------------ORDEM         ----------------\n" ;
     em_ordem(raiz_de_todos_os_males);
-    std::cout << "-----------------PRE-ORDEM   ----------------\n";
-    pre_ordem(raiz_de_todos_os_males);
-    std::cout << "-----------------POST-ORDEM   ----------------\n";
-    pos_ordem(raiz_de_todos_os_males);
+    //std::cout << "-----------------PRE-ORDEM   ----------------\n";
+   // pre_ordem(raiz_de_todos_os_males);
+    //std::cout << "-----------------POST-ORDEM   ----------------\n";
+    //pos_ordem(raiz_de_todos_os_males);
 }
 
