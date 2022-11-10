@@ -28,31 +28,32 @@ struct noh* inserir(noh* nohzito, int dado)
     return nohzito;
 }
 
-void em_ordem(struct noh* raiz)
-{
-    if (raiz != NULL) {
-        em_ordem(raiz->esquerda);
-        std::cout << raiz->dado << '\n';
-        em_ordem(raiz->direita);
-    }
+
+int quantidade_nos(struct noh* raiz) {
+    if (raiz == NULL) //Se não tiver valores vai retornar que a árvore possui zero nós
+        return 0;
+    else
+        return 1 + quantidade_nos(raiz->esquerda) + quantidade_nos(raiz->direita); //Soma a quantidade de nós da direita, da esquerda e a raiz
+
 }
 
-void pre_ordem(struct noh* raiz)
-{
-    if (raiz != NULL) {
-        std::cout << raiz->dado << '\n';
-        pre_ordem(raiz->esquerda);
-        pre_ordem(raiz->direita);
+int altura(struct noh* raiz) {
+    if (raiz == NULL) { //Se não tiver valores vai retornar que a árvore possui altura zero
+        return 0;
     }
+    else { //Compara a altura dos ramos da direita e esquerda e soma a raiz ao maior valor
+    int he = altura(raiz->esquerda);
+    int hd = altura(raiz->direita);
+    if (he < hd) return hd + 1;//Se a altura do ramo da direita for maior soma a raiz na sua altura
+    else return he + 1;//Se a altura do ramo da esquerda for maior soma a raiz na sua altura
+   }
 }
 
-void pos_ordem(struct noh* raiz)
-{
-    if (raiz != NULL) {
-        pos_ordem(raiz->esquerda);
-        pos_ordem(raiz->direita);
-        std::cout << raiz->dado << '\n';
+int soma_no(struct noh* raiz) {
+    if (raiz == NULL) { //Se não tiver valores vai retornar que soma dos nós é zero
+        return 0;
     }
+    return ((raiz->dado) + soma_no(raiz->esquerda) + soma_no(raiz->direita)); //Faz a soma dos valores dos nós da direta, esquerda e raiz
 }
 
 void arvore() {
@@ -64,12 +65,16 @@ void arvore() {
     inserir(raiz_de_todos_os_males, 70);
     inserir(raiz_de_todos_os_males, 60);
     inserir(raiz_de_todos_os_males, 80);
-    
-    std::cout << "----------------ORDEM         ----------------\n" ;
-    em_ordem(raiz_de_todos_os_males);
-    std::cout << "-----------------PRE-ORDEM   ----------------\n";
-    pre_ordem(raiz_de_todos_os_males);
-    std::cout << "-----------------POST-ORDEM   ----------------\n";
-    pos_ordem(raiz_de_todos_os_males);
+
+    int nos = quantidade_nos(raiz_de_todos_os_males);
+    printf("A quantidade de nós é: %d\n", nos); //Escreve a quantidade de nós que foi calculada
+
+    int alt = altura(raiz_de_todos_os_males);
+    printf("A altura da árvore é: %d\n", alt); //Escreve o valor da altura da árvore
+
+    int somanos = soma_no(raiz_de_todos_os_males);
+    printf("A soma dos valores dos nós é: %d\n", somanos); //Escreve a soma dos valores de todos os nós
+
+
 }
 
